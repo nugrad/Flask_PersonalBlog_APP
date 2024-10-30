@@ -1,0 +1,54 @@
+Blog Maker Application
+Project Overview
+Blog Maker Application is a Flask-based web application that allows users to create, update, and delete blog posts. Users can register and log in to access a personal dashboard where they can manage their posts. This project provides a great learning foundation for web development, user authentication, database operations, and CRUD functionality with MySQL integration.
+
+Key Features
+User Registration and Authentication: Users can create an account and log in securely.
+Personal Dashboard: A private area for each user to view and manage their blog posts.
+CRUD Operations: Users can create, update, and delete posts.
+sqlite Database Integration: Blog posts and user data are stored in a sqlite database.we can also cofigure mysql db as well,
+just change follwing line and install pymysql
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/blog'
+
+Workflow Overview
+1. Homepage (index.html)
+Description: The landing page introduces the app with options to Login and About.
+URL: /
+Function: Users can navigate to the Login or About page.
+2. User Registration (register.html)
+Description: Allows new users to create an account.
+URL: /register
+Method: GET, POST
+Function: On form submission, a new user is added to the database, and they are redirected to the Login page.
+3. User Login (login.html)
+Description: Authenticates users and grants access to the dashboard.
+URL: /login
+Method: GET, POST
+Function: If credentials are valid, the user is redirected to their dashboard.
+4. User Dashboard (dashboard.html)
+Description: Displays all posts created by the logged-in user.
+URL: /dashboard
+Method: GET
+Function: Shows a list of the user’s blog posts, with options to Create a New Post, Edit, or Delete existing posts.
+5. Create Post (create_post.html)
+Description: Provides a form for users to write a new blog post.
+URL: /create_post
+Method: GET, POST
+Function: On form submission, the post is added to the database and displayed on the user’s dashboard.
+6. Edit Post (update_post.html)
+Description: Allows users to edit existing blog posts.
+URL: /update_post/<int:post_id>
+Method: GET, POST
+Function: Loads the existing post content in a form. On submission, the post is updated and displayed on the dashboard.
+7. Delete Post
+Description: Deletes a post from the user’s dashboard.
+URL: /delete_post/<int:post_id>
+Method: POST
+Function: On form submission, the post is deleted from the database and removed from the dashboard view.
+8. About Page (about.html)
+Description: Provides information about the project and its developer.
+URL: /about
+Function: A static page that describes the purpose of the application.
+9. User Logout
+URL: /logout
+Function: Logs out the user and redirects them to the homepage.

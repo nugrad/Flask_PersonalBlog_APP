@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered-content" style="background-image: url('/static/bg.jpg');">
+    <nav>
+        <a href="{{ url_for('login') }}">Login</a> |
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
+    <div class="home-heading">
+        <h1>Welcome to the Blog Maker</h1>
+        <p>Where you create and share your own blogs</p>
+    </div>
+</body>
+</html>
+
+
+
+
